@@ -4,7 +4,7 @@ import Nav from './components/Nav'
 
 export default function Store() {
 
-    const [products,setProducts] = useState('')
+    const [products,setProducts] = useState(undefined)
 
     async function fetchProducts() {
        const response = await fetch('https://fakestoreapi.com/products')
@@ -26,12 +26,14 @@ export default function Store() {
         returnedProducts();
     }, [])
     
-    products.map(product => console.log(product))
+    
     
   return (
       <main>
           <Nav />
-          <ItemCard products={products} />
+          {products &&
+              <ItemCard products={products} />
+          }
       </main> 
   )
 }
