@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 import cartReducer from "./features/cartSlice";
+import Cart from "./components/Cart";
 
 const store = configureStore({
   reducer: {
@@ -25,6 +26,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/store" element={<Products />} />
+        <Route path ="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>
   </Provider>
